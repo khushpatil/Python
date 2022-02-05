@@ -28,35 +28,35 @@
 # print(f"{row1}\n{row2}\n{row3}") 
 
 #final project of day 4 : a rock, paper, scissors game with the computer
-import random
-print("This is the rock, paper, scissors game!")
-print("0 will be rock, 1 will be paper and 2 will be scissors!\nMake your choice!")
-choices = ["rock", "paper", "scissors"]
-choice = int(input("Enter your choice: "))
-cpu_choice = random.randint(0,2)
-while choice == 0:
-    if(cpu_choice == 0):
-        print(f"Your choice is {choices[choice]} and the cpu choice is {choices[cpu_choice]}\nThis is a draw!")
-    elif(cpu_choice == 1):
-        print(f"Your choice is {choices[choice]} and the cpu choice is {choices[cpu_choice]}\nThe cpu wins!")
-    else:
-        print(f"Your choice is {choices[choice]} and the cpu choice is {choices[cpu_choice]}\nCongrats, you win!") 
-    break
-while choice == 1:
-    if(cpu_choice == 0):
-        print(f"Your choice is {choices[choice]} and the cpu choice is {choices[cpu_choice]}\nCongrats, you win!")
-    elif(cpu_choice == 1):
-        print(f"Your choice is {choices[choice]} and the cpu choice is {choices[cpu_choice]}\nThis is a draw!")
-    else:
-        print(f"Your choice is {choices[choice]} and the cpu choice is {choices[cpu_choice]}\nThe cpu wins!")
-    break
-while choice == 2:
-    if(cpu_choice == 0):
-        print(f"Your choice is {choices[choice]} and the cpu choice is {choices[cpu_choice]}\nThe cpu wins!")
-    elif(cpu_choice == 1):
-        print(f"Your choice is {choices[choice]} and the cpu choice is {choices[cpu_choice]}\nCongrats, you win!")
-    else:
-        print(f"Your choice is {choices[choice]} and the cpu choice is {choices[cpu_choice]}\nThis is a draw!")
-    break
-else:
-    print("Nigga please type any number between 0,1 and 2 and nothing else please")
+# import random
+# print("This is the rock, paper, scissors game!")
+# print("0 will be rock, 1 will be paper and 2 will be scissors!\nMake your choice!")
+# choices = ["rock", "paper", "scissors"]
+# choice = int(input("Enter your choice: "))
+# cpu_choice = random.randint(0,2)
+# while choice == 0:
+#     if(cpu_choice == 0):
+#         print(f"Your choice is {choices[choice]} and the cpu choice is {choices[cpu_choice]}\nThis is a draw!")
+#     elif(cpu_choice == 1):
+#         print(f"Your choice is {choices[choice]} and the cpu choice is {choices[cpu_choice]}\nThe cpu wins!")
+#     else:
+#         print(f"Your choice is {choices[choice]} and the cpu choice is {choices[cpu_choice]}\nCongrats, you win!") 
+#     break
+# while choice == 1:
+#     if(cpu_choice == 0):
+#         print(f"Your choice is {choices[choice]} and the cpu choice is {choices[cpu_choice]}\nCongrats, you win!")
+#     elif(cpu_choice == 1):
+#         print(f"Your choice is {choices[choice]} and the cpu choice is {choices[cpu_choice]}\nThis is a draw!")
+#     else:
+#         print(f"Your choice is {choices[choice]} and the cpu choice is {choices[cpu_choice]}\nThe cpu wins!")
+#     break
+# while choice == 2:
+#     if(cpu_choice == 0):
+#         print(f"Your choice is {choices[choice]} and the cpu choice is {choices[cpu_choice]}\nThe cpu wins!")
+#     elif(cpu_choice == 1):
+#         print(f"Your choice is {choices[choice]} and the cpu choice is {choices[cpu_choice]}\nCongrats, you win!")
+#     else:
+#         print(f"Your choice is {choices[choice]} and the cpu choice is {choices[cpu_choice]}\nThis is a draw!")
+#     break
+# else:
+#     print("Nigga please type any number between 0,1 and 2 and nothing else please")
