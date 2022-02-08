@@ -27,6 +27,5 @@ while not end_game:
         end_game = True
     if " " not in ans_list:
         print("You win")
-    elif lives<0:print("You lose")
-    if lives<0:print(f"The word was {chosen_word} ya noob")
+    elif lives<0:print("You lose") and print(f"\nThe word was {chosen_word} ya noob")
 
