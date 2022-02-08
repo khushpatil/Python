@@ -35,24 +35,17 @@
 #making the caesar cipher
 import string
 start = input("Type encode to start encoding or decode to decode a message: ")
-text = input("Enter your message: ")
-shift = int(input("Enter the shift: "))
-if(start == "encode" or "decode"):
-    encode = True
-else:encode = False
 def encrypt(text, shift):
     encoded_message = ""
-    new_alphabet = []
-    while encode :
-        #The below code is to create a new alphabet with the given shift
-        for i in range(len(string.ascii_lowercase)):
-            while i+shift <= len(string.ascii_lowercase):
-                new_alphabet.append(string.ascii_lowercase[i+shift])
-            else:
-                for j in range(len(string.ascii_lowercase)-len(new_alphabet)):
-                    new_alphabet.append(string.ascii_lowercase[j])
-        for letter in text:
-            ind = string.ascii_lowercase.index(letter)
-            encoded_message += new_alphabet[ind]
-        print(f"The encoded message is {encoded_message}")
-encrypt(text, shift)
+    for letter in text:
+        ind = string.ascii_lowercase.index(letter)
+        while ind+shift <= len(string.ascii_lowercase):
+            encoded_message += string.ascii_lowercase[ind+shift]
+        if(ind+shift > len(string.ascii_lowercase)):
+            encoded_message += string.ascii_lowercase[((ind+shift)-(len(string.ascii_lowercase)))-1]
+    print(f"The encoded message is {encoded_message}")
+while start=="encode" or "decode":
+    text = input("Enter your message: ")
+    shift = int(input("Enter the shift: "))
+    encrypt(text,shift)
+
