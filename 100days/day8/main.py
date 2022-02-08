@@ -34,18 +34,42 @@
 
 #making the caesar cipher
 import string
-start = input("Type encode to start encoding or decode to decode a message: ")
 def encrypt(text, shift):
     encoded_message = ""
     for letter in text:
-        ind = string.ascii_lowercase.index(letter)
-        while ind+shift <= len(string.ascii_lowercase):
-            encoded_message += string.ascii_lowercase[ind+shift]
-        if(ind+shift > len(string.ascii_lowercase)):
-            encoded_message += string.ascii_lowercase[((ind+shift)-(len(string.ascii_lowercase)))-1]
+        if letter in string.ascii_lowercase:
+            ind = string.ascii_lowercase.index(letter)
+            if ind+shift < len(string.ascii_lowercase):
+                encoded_message += string.ascii_lowercase[ind+shift]
+            else:
+                encoded_message += string.ascii_lowercase[(ind+shift)-(len(string.ascii_lowercase))]
+        else:encoded_message += letter
     print(f"The encoded message is {encoded_message}")
-while start=="encode" or "decode":
-    text = input("Enter your message: ")
+
+def decrypt(text,shift):
+    decoded_message = ""
+    for letter in text:
+        if letter in string.ascii_lowercase:
+            ind = string.ascii_lowercase.index(letter)
+            if ind-shift >= 0:
+                decoded_message += string.ascii_lowercase[ind-shift]
+            else:
+                decoded_message += string.ascii_lowercase[(ind-shift)+len(string.ascii_lowercase)]
+        else:decoded_message += letter
+    print(f"The decoded message is {decoded_message}")
+
+kg = input("Do you want to encode or decode a message?(y/n): ")
+while kg == "y":
+    start = input("Type encode to start encoding or decode to decode a message: ")
+    text = input("Enter your message: ").lower()
     shift = int(input("Enter the shift: "))
-    encrypt(text,shift)
+    if(shift>25):
+        shift %= 25
+    if(start == "encode"):
+        encrypt(text,shift)
+    elif(start == "decode"):
+        decrypt(text,shift)
+    else:print("Not a valid operation")
+    kg = input("Do you want to encode or decode a message?(y/n): ")
+
 
