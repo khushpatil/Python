@@ -34,6 +34,7 @@
 
 #making the caesar cipher
 import string
+import caesar_cipherart
 def encrypt(text, shift):
     encoded_message = ""
     for letter in text:
@@ -58,6 +59,7 @@ def decrypt(text,shift):
         else:decoded_message += letter
     print(f"The decoded message is {decoded_message}")
 
+print(caesar_cipherart.logo)
 kg = input("Do you want to encode or decode a message?(y/n): ")
 while kg == "y":
     start = input("Type encode to start encoding or decode to decode a message: ")
