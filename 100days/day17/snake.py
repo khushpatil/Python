@@ -5,6 +5,8 @@ class Snake:
     def __init__(self):
         self.len_snake = []
         self.init_pos = 0
+
+    def create_snake(self):
         for _ in range(3):
             new_turtle = Turtle()
             new_turtle.up()
@@ -14,7 +16,7 @@ class Snake:
             self.len_snake.append(new_turtle)
             self.init_pos -= 20
         self.head = self.len_snake[0]
-    
+
     def move(self):
         for i in range(len(self.len_snake)-1, 0 , -1):
             new_x = self.len_snake[i-1].xcor()
@@ -45,3 +47,9 @@ class Snake:
         new_turtle.color("white")
         new_turtle.setpos(position)
         self.len_snake.append(new_turtle)
+
+    def reset_snake(self):
+        for snake in self.len_snake:
+            snake.setpos(1000,1000)
+        self.len_snake.clear()
+        self.create_snake()
