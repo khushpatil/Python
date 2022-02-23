@@ -12,6 +12,7 @@ screen.title("My Snake Game")
 
 screen.tracer(0)
 tim = Snake()
+tim.create_snake()
 food = Food()
 score = Score()
 up_score = Score()
@@ -31,22 +32,21 @@ while game_is_on:
     if tim.head.distance(food) < 15 :
         food.refresh()
         tim.grow()
+        up_score.score_num += 1
         up_score.update_score()
     
     if tim.head.xcor() == 300 or tim.head.xcor() == -300 or tim.head.ycor() == 300 or tim.head.ycor() == -300:
-        up_score.setpos(0,0)
-        up_score.write("Game Over", font = ("Arial",32,"bold"))
-        up_score.up()
-        game_is_on = False
-            
+        time.sleep(2)
+        tim.reset_snake()
+        up_score.reset()          
 
     for snake in tim.len_snake:
         if snake == tim.head:
             pass
         elif tim.head.distance(snake) < 10:
-            game_is_on = False
-            up_score.setpos(0,0)
-            up_score.write("Game Over", font = ("Arial",32,"bold"))
+            time.sleep(2)
+            tim.reset_snake()
+            up_score.reset()
 
 
 
