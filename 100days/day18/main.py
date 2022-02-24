@@ -55,15 +55,5 @@ while game_is_on:
         initialize()
         
 
-
-
-
-
-
-
-
-
-
-
-
 screen.exitonclick()
+
