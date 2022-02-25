@@ -49,4 +49,5 @@ while game_is_on:
         print("Your lives are over, try again")
         game_is_on = False
 
-screen.exitonclick()
+    elif ans == "Exit":
+        break
